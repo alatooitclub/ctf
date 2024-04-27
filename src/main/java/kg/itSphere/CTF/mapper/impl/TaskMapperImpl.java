@@ -1,6 +1,8 @@
 package kg.itSphere.CTF.mapper.impl;
 
+import kg.itSphere.CTF.dto.task.TaskRequest;
 import kg.itSphere.CTF.dto.task.TaskResponse;
+import kg.itSphere.CTF.entities.Image;
 import kg.itSphere.CTF.entities.Task;
 import kg.itSphere.CTF.mapper.TaskMapper;
 import lombok.AllArgsConstructor;
@@ -32,5 +34,22 @@ public class TaskMapperImpl implements TaskMapper {
         taskRespons.add(toDto(task));
         }
         return taskRespons;
+    }
+
+    @Override
+    public Task toDtoTask(Task task, TaskRequest taskRequest, Image image) {
+        task.setAuthor(taskRequest.getAuthor());
+        task.setCategory(taskRequest.getCategory());
+        task.setFlag(taskRequest.getFlag());
+        task.setHint(taskRequest.getHint());
+        task.setDescription(taskRequest.getDescription());
+        task.setName(taskRequest.getName());
+        task.setPoints(taskRequest.getPoints());
+        task.setStatus(taskRequest.getStatus());
+        task.setImage(image);
+        return task;
+
+
+
     }
 }
