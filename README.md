@@ -1,5 +1,5 @@
 
-# AlaTooItSphere CTF  🔴🔵
+# AlaTooItClub CTF  🔴🔵
 
 Welcome to the official repository for the AlaTooITClub's Capture The Flag (CTF) web service. This web service is designed to host CTF competitions, allowing users to engage in cybersecurity challenges in a robust and user-friendly environment. Built with Spring Boot and Thymeleaf, this platform supports a range of CTF challenges that can be easily managed and scaled.
 
