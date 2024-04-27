@@ -1,15 +1,11 @@
-package kg.itSphere.CTF.entities;
-import jakarta.persistence.*;
+package kg.itSphere.CTF.dto.task;
+
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
 @Getter
 @Setter
-@Table(name = "ctf")
-public class Ctf {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class TaskDetailResponse {
     private Long id;
     private String name;
     private String description;
@@ -20,4 +16,5 @@ public class Ctf {
     private String author;
     private String points;
     private String status;
+    private String imagePath;
 }
