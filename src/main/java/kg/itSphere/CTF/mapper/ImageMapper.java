@@ -11,4 +11,5 @@ public interface ImageMapper {
     List<ImageResponse> toDtoS(List<Image> all);
 
     Image toDtoImage(Image image, String name);
+
 }

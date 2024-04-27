@@ -4,6 +4,7 @@ import kg.itSphere.CTF.dto.task.TaskDetailResponse;
 import kg.itSphere.CTF.dto.task.TaskResponse;
 import kg.itSphere.CTF.services.TaskService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +17,6 @@ import java.util.List;
 @RequestMapping("/ctf")
 public class TaskController {
     private final TaskService taskService;
-
     @GetMapping("/all")
     public List<TaskResponse>all(){
             return taskService.all();
