@@ -12,4 +12,7 @@ public class Role {
 
     @Column(unique = true)
     private String name;
+
+    @OneToOne(mappedBy = "role")
+    private User user;
 }
