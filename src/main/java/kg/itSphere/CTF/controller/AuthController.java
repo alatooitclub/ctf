@@ -4,9 +4,10 @@ import kg.itSphere.CTF.dto.auth.AuthRequest;
 import kg.itSphere.CTF.dto.auth.AuthResponse;
 import kg.itSphere.CTF.services.AuthService;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 @AllArgsConstructor
 @RequestMapping("/auth")
 public class AuthController {
@@ -30,5 +31,20 @@ public class AuthController {
     @GetMapping("/admin")
     public String admin() {
         return "Admin endpoint";
+    }
+
+    @GetMapping("/login-form")
+    public String loginForm() {
+        return "login";
+    }
+
+    @GetMapping("/register-form")
+    public String registerForm() {
+        return "register";
+    }
+
+    @GetMapping("/forgot-password-form")
+    public String forgotPassword() {
+        return "forgot-password";
     }
 }
