@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/admin")
 public class AdminController {
     private final AdminServiceImpl adminService;
-    @PostMapping("/task/add/{imageId}")
-    public MyData addTask(@RequestBody TaskRequest taskRequest ,
-                        @PathVariable Long imageId){
+    @PostMapping("/task/add")
+    public MyData addTask(@RequestBody TaskRequest taskRequest
+                      ){
         MyData data = new MyData();
-        adminService.addTask(taskRequest , imageId);
+        adminService.addTask(taskRequest );
         data.setMessage("Task added successfully");
         return data;
     }
-    @GetMapping("/task/updateById/{taskId}/{imageId}")
-    public MyData updateTask(@RequestBody TaskRequest taskRequest ,
-                             @PathVariable Long imageId,
+    @GetMapping("/task/updateById/{taskId}")
+    public MyData updateTask(@RequestBody TaskRequest taskRequest
+                             ,
                              @PathVariable Long taskId){
         MyData data = new MyData();
         data.setMessage("Task updated successfully");
