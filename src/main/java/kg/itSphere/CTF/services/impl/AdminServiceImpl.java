@@ -18,10 +18,10 @@ public class AdminServiceImpl implements AdminService {
     private final TaskRepository taskRepository;
     private final TaskMapper taskMapper;
     @Override
-    public void addTask(TaskRequest taskRequest, Long imageId) {
-        Optional<Image> image = imageRepository.findById(imageId);
+    public void addTask(TaskRequest taskRequest) {
+
         Task task = new Task();
-        taskRepository.save(taskMapper.toDtoTask(task , taskRequest , image.get()));
+        taskRepository.save(taskMapper.toDtoTask(task , taskRequest ));
     }
 
 }

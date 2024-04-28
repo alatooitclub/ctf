@@ -37,7 +37,7 @@ public class TaskMapperImpl implements TaskMapper {
     }
 
     @Override
-    public Task toDtoTask(Task task, TaskRequest taskRequest, Image image) {
+    public Task toDtoTask(Task task, TaskRequest taskRequest) {
         task.setAuthor(taskRequest.getAuthor());
         task.setCategory(taskRequest.getCategory());
         task.setFlag(taskRequest.getFlag());
@@ -46,7 +46,7 @@ public class TaskMapperImpl implements TaskMapper {
         task.setName(taskRequest.getName());
         task.setPoints(taskRequest.getPoints());
         task.setStatus(taskRequest.getStatus());
-        task.setImage(image);
+
         return task;
 
 
