@@ -21,7 +21,8 @@ public class SecurityFilter {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth -> auth.requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html", "/auth/register", "/auth/login").permitAll()
+                .authorizeHttpRequests(auth -> auth.requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html", "/auth/register", "/auth/login"
+                        , "/**").permitAll()
                         .requestMatchers("/auth/admin").hasRole("ADMIN")
                         .anyRequest().authenticated())
                 .sessionManagement(session -> session
