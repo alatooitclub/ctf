@@ -18,22 +18,22 @@ public class UserController {
     private final MyUserService userService;
 
     @GetMapping("/all")
-    List<UserResponse> all() {
+    public List<UserResponse> all() {
         return userService.all();
     }
 
     @GetMapping("/findByEmail")
-    UserResponse findByEmail(@RequestParam(value = "email") String email) {
+    public UserResponse findByEmail(@RequestParam(value = "email") String email) {
         return userService.findByEmail(email);
     }
 
     @PutMapping("/updateById")
-    void updateById(@NotNull @RequestParam(value = "id") Long id, @Valid @RequestBody UserRequest userRequest) {
+    public void updateById(@NotNull @RequestParam(value = "id") Long id, @Valid @RequestBody UserRequest userRequest) {
         userService.updateById(id, userRequest);
     }
 
     @DeleteMapping("/deleteById")
-    void deleteById(@NotNull @RequestParam(value = "id") Long id) {
+    public void deleteById(@NotNull @RequestParam(value = "id") Long id) {
         userService.deleteById(id);
     }
 }

@@ -16,17 +16,17 @@ public class RoleController {
     private final RoleService roleService;
 
     @GetMapping("/all")
-    List<RoleResponse> all() {
+    public List<RoleResponse> all() {
         return roleService.all();
     }
 
     @PutMapping("/updateById")
-    void updateById(@NotNull @RequestParam Long id, @RequestBody RoleRequest request) {
+    public void updateById(@NotNull @RequestParam Long id, @RequestBody RoleRequest request) {
         roleService.updateById(id, request);
     }
 
     @PostMapping("/create")
-    void create(@RequestBody RoleRequest request) {
+    public void create(@RequestBody RoleRequest request) {
         roleService.create(request);
     }
 }
