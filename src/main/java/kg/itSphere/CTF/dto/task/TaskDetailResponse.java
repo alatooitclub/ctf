@@ -12,9 +12,10 @@ public class TaskDetailResponse {
     private String category;
     private String flag;
     private String hint;
-    private String file;
+    private Integer rating;
+    private String attachments;
+    private Integer solves;
     private String author;
-    private String points;
+    private Integer points;
     private String status;
-    private String imagePath;
 }

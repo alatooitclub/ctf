@@ -18,8 +18,6 @@ public class TaskMapperImpl implements TaskMapper {
     public TaskResponse toDto(Task task) {
         TaskResponse taskResponse = new TaskResponse();
         taskResponse.setId(task.getId());
-        if(task.getImage()!=null)
-            taskResponse.setImagePath(task.getImage().getPath());
         taskResponse.setAuthor(task.getAuthor());
         taskResponse.setName(task.getName());
         taskResponse.setStatus(task.getStatus());
@@ -46,7 +44,7 @@ public class TaskMapperImpl implements TaskMapper {
         task.setName(taskRequest.getName());
         task.setPoints(taskRequest.getPoints());
         task.setStatus(taskRequest.getStatus());
-
+        task.setAttachments(taskRequest.getAttachments());
         return task;
 
 

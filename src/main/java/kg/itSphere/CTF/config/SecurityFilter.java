@@ -15,15 +15,14 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @Configuration
 @AllArgsConstructor
-public class SecurityFilter {
+public class    SecurityFilter {
     private final JwtFilter jwtFilter;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth -> auth.requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html", "/auth/register", "/auth/login"
+                .authorizeHttpRequests(auth -> auth.requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/tasks/**","/admin/**","/swagger-ui.html", "/auth/register", "/auth/login","/image/**"
                         , "/**").permitAll()
-                        .requestMatchers("/auth/admin").hasRole("ADMIN")
                         .anyRequest().authenticated())
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
