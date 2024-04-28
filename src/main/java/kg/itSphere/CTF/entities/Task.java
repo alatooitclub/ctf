@@ -21,11 +21,12 @@ public class Task {
     @NotEmpty(message = "Flag can't be empty")
     private String flag;
     private String hint;
-    private String rating;
-    private String solves;
+    private Integer rating = 100;
+    private String attachments;
+    private Integer solves = 0;
     private String author;
     @NotNull(message = "Points can't be empty")
-    private String points;
+    private Integer points;
     private String status;
     @OneToOne
     @JoinColumn
