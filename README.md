@@ -35,3 +35,18 @@ Before you begin, ensure you have the following installed on your system:
     ```
     mvn spring-boot:run
     ```
+     ### Contributing
+   We welcome contributions from all members of the AlaToo IT Club. If you want to contribute to this project, please follow these steps:
+   <ol type="1">
+     <li>Fork the repository.</li>
+     <li>Create a new branch (git checkout -b feature/AmazingFeature).</li>
+     <li>Make your changes.</li>
+     <li>Commit your changes (git commit -m 'Add some AmazingFeature').</li>
+     <li>Push to the branch (git push origin feature/AmazingFeature).</li>
+     <li>Open a new Pull Request.</li>
+     
+    </ol>
+    <h2>License</h2>
+        Distributed under the MIT License. See LICENSE for more information.  
+    <h2>Contact</h2>
+      AlaTooItClub - alatooitclub@gmail.com

@@ -8,7 +8,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "ctf")
+@Table(name = "tasks")
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +21,8 @@ public class Task {
     @NotEmpty(message = "Flag can't be empty")
     private String flag;
     private String hint;
+    private String rating;
+    private String solves;
     private String author;
     @NotNull(message = "Points can't be empty")
     private String points;

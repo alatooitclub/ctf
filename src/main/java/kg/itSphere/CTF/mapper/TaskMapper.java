@@ -10,5 +10,5 @@ import java.util.List;
 public interface TaskMapper {
     TaskResponse toDto(Task task);
     List<TaskResponse> toDtos(List<Task> tasks);
-    Task toDtoTask(Task task , TaskRequest taskRequest   , Image image);
+    Task toDtoTask(Task task , TaskRequest taskRequest );
 }

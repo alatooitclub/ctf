@@ -3,10 +3,11 @@ package kg.itSphere.CTF.mapper.impl;
 import kg.itSphere.CTF.dto.image.ImageResponse;
 import kg.itSphere.CTF.entities.Image;
 import kg.itSphere.CTF.mapper.ImageMapper;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Component
 public class ImageMapperImpl implements ImageMapper {
     @Override
     public ImageResponse toDto(Image image) {
