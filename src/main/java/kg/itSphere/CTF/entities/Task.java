@@ -24,7 +24,6 @@ public class Task {
     private Integer solves = 0;
     @Enumerated(EnumType.STRING)
     private TaskDifficulty difficulty;
-    private String author;
     private Integer points;
     @Enumerated(EnumType.STRING)
     private TaskStatus status;

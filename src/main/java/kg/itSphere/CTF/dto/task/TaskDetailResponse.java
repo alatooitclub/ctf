@@ -13,9 +13,7 @@ public class TaskDetailResponse {
     private String flag;
     private String hint;
     private Integer rating;
-    private String attachments;
     private Integer solves;
-    private String author;
     private Integer points;
     private String status;
 }

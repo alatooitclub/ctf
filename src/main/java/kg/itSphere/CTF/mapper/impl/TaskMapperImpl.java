@@ -25,7 +25,6 @@ public class TaskMapperImpl implements TaskMapper {
     public TaskResponse toDto(Task task) {
         TaskResponse taskResponse = new TaskResponse();
         taskResponse.setId(task.getId());
-        taskResponse.setAuthor(task.getAuthor());
         taskResponse.setName(task.getName());
         taskResponse.setStatus(TaskStatus.ACTIVE.name());
         taskResponse.setCategory(task.getCategory().getName());
@@ -47,7 +46,7 @@ public class TaskMapperImpl implements TaskMapper {
         if(category.isEmpty()){
             throw new NotFoundException("Category with this name " +taskRequest.getCategory()+" wasn't found " , HttpStatus.NOT_FOUND);
         }
-        task.setAuthor(taskRequest.getAuthor());
+
         task.setCategory(category.get());
         task.setFlag(taskRequest.getFlag());
         task.setDescription(taskRequest.getDescription());
