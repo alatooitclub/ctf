@@ -1,5 +1,6 @@
 package kg.itSphere.CTF.services;
 
+import kg.itSphere.CTF.dto.task.CategoryRequest;
 import kg.itSphere.CTF.dto.task.TaskRequest;
 
 public interface AdminService {
@@ -8,4 +9,6 @@ public interface AdminService {
     void updateTask(Long taskId, TaskRequest taskRequest);
 
     void deleteTask(Long taskId);
+
+    void addCategory(CategoryRequest categoryRequest);
 }

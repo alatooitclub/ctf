@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Challenge page</title>
-    <link rel="stylesheet"  th:href="@{/static/tasks/tasks.css}">
+<!--    <link rel="stylesheet"  th:href="@{/static/tasks/tasks.css}">-->
 
 </head>
 <body>
@@ -14,28 +14,7 @@
 </section>
 
 <section id="challenges-section">
-    <div class="container">
-        <div class="filter-section">
-            <!-- Add your filter controls here -->
-        </div>
-        <div class="challenge-list">
-            <ul>
-                <li th:each="task : ${tasks}">
-                    <div class="challenge" th:classappend="${task.solved ? 'solved' : ''}">
-                        <h3 th:text="${task.name}">Challenge Title</h3>
-                        <div class="challenge-info">
-                            <span th:text="'Points: ' + ${task.points}">Points: 0</span>
-                            <span th:text="'Rating: ' + ${task.rating}">Rating: 0.00</span>
-                            <span th:text="'Solves: ' + ${task.solves}">Solves: 0</span>
-                        </div>
-                        <div class="challenge-category" th:text="${task.category}">Category</div>
-                        <div class="challenge-difficulty" th:text="${task.difficulty}">Difficulty</div>
-                        <a href="#" th:href="@{/task/{id}(id=${task.id})}">View Challenge</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
+
 
 </section>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
