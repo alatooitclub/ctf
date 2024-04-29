@@ -3,6 +3,8 @@ package kg.itSphere.CTF.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Data
 public class Role {
@@ -13,6 +15,6 @@ public class Role {
     @Column(unique = true)
     private String name;
 
-    @OneToOne(mappedBy = "role")
-    private User user;
+    @OneToMany(mappedBy = "role")
+    private List<User> users;
 }

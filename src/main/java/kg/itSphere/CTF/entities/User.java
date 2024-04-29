@@ -26,7 +26,7 @@ public class User implements UserDetails{
     @OneToMany
     private List<Task> tasks;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(referencedColumnName = "name")
     private Role role;
 

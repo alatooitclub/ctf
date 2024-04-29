@@ -1,5 +1,6 @@
 package kg.itSphere.CTF.services.impl;
 
+import kg.itSphere.CTF.dto.auth.AuthRegisterRequest;
 import kg.itSphere.CTF.dto.auth.AuthRequest;
 import kg.itSphere.CTF.dto.auth.AuthResponse;
 import kg.itSphere.CTF.entities.Role;
@@ -24,16 +25,16 @@ public class AuthServiceImpl implements AuthService {
     private final AuthenticationManager authenticationManager;
 
     @Override
-    public AuthResponse register(AuthRequest authRequest) {
+    public AuthResponse register(AuthRegisterRequest authRegisterRequest) {
         if(roleRepository.findByName("USER").isEmpty()) {
             Role role = new Role();
             role.setName("USER");
             roleRepository.save(role);
         }
-        if(userRepository.findByEmail(authRequest.getEmail()).isPresent()) {
+        if(userRepository.findByEmail(authRegisterRequest.getEmail()).isPresent()) {
             throw new CustomException("User is found", HttpStatus.FOUND);
         } else {
-            User user = authMapper.toDtoUser(authRequest);
+            User user = authMapper.toDtoUser(authRegisterRequest);
             user.setRole(roleRepository.findByName("USER").get());
             userRepository.save(user);
             return authMapper.toDto(user);
