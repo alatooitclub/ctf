@@ -27,7 +27,7 @@ public class    SecurityFilter {
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .formLogin(form -> form
-                                .loginPage("/auth/login")
+                                .loginPage("/auth/login-form")
                                 .loginProcessingUrl("/auth/do-login")
                                 .defaultSuccessUrl("/auth/index")
                                 .failureForwardUrl("/auth/login?error")

@@ -8,6 +8,7 @@ import lombok.Data;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 @Entity
 @Data
@@ -22,8 +23,10 @@ public class User implements UserDetails{
     @Column(unique = true)
     private String email;
     private String password;
+    @OneToMany
+    private List<Task> tasks;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(referencedColumnName = "name")
     private Role role;
 
