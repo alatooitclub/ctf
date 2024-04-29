@@ -11,8 +11,9 @@ public class TaskRequest {
     private String category;
     private String flag;
     private String hint;
-    private String file;
+    private String attachments;
+    private Integer rating;
     private String author;
-    private String points;
+    private Integer points;
     private String status;
 }

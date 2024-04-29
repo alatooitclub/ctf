@@ -56,7 +56,7 @@ public class ImageServiceImpl implements ImageService {
         fileObj.delete();
         Image image = new Image();
         Image image1 = imageRepository.saveAndFlush(imageMapper.toDtoImage(image, fileName));
-        image1.setPath("localhost:5151/image/view/" + image1.getId());
+        image1.setPath("localhost:5252/image/view/" + image1.getId());
         imageRepository.save(image1);
         return fileName;
     }
@@ -77,7 +77,7 @@ public class ImageServiceImpl implements ImageService {
     @Override
     public void deleteFile(Long id) {
         String fileName = getName(id);
-        if(imageRepository.findByName(fileName).isEmpty()) {
+        if(imageRepository.findById(id).isEmpty()) {
             throw new NotFoundException("File with name=\"" + fileName + "\" not found", HttpStatus.NOT_FOUND);
         }
         s3Client.deleteObject(bucketName, fileName);

@@ -9,8 +9,7 @@ public class TaskResponse {
     private Long id;
     private String name;
     private String category;
-    private String imagePath;
     private String author;
-    private String points;
+    private Integer points;
     private String status;
 }
