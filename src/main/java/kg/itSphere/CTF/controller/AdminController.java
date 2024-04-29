@@ -1,6 +1,7 @@
 package kg.itSphere.CTF.controller;
 
 import kg.itSphere.CTF.dto.MyData;
+import kg.itSphere.CTF.dto.task.CategoryRequest;
 import kg.itSphere.CTF.dto.task.TaskRequest;
 import kg.itSphere.CTF.services.AdminService;
 import kg.itSphere.CTF.services.impl.AdminServiceImpl;
@@ -36,4 +37,12 @@ public class AdminController {
         data.setMessage("Task deleted successfully");
         return data;
     }
+    @PostMapping("/category/add")
+    public MyData addCategory(@RequestBody CategoryRequest categoryRequest){
+        adminService.addCategory(categoryRequest);
+        MyData data = new MyData();
+        data.setMessage("Category added successfully");
+        return data ;
+    }
+
 }
