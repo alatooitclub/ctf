@@ -11,7 +11,7 @@ public interface TaskService {
     TaskDetailResponse detail(Long id);
 
     List<Task> getAllTasks();
-    List<TaskResponse> findTasksByCategory(String category);
-    List<TaskResponse> findTasksByName(String name);
-    List<TaskResponse> findTasksByCategoryAndName(String category, String name);
+//    List<TaskResponse> findTasksByCategory(String category);
+//    List<TaskResponse> findTasksByName(String name);
+//    List<TaskResponse> findTasksByCategoryAndName(String category, String name);
 }

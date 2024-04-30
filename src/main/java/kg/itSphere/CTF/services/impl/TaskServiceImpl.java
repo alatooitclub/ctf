@@ -38,46 +38,46 @@ public class TaskServiceImpl implements TaskService {
         return repository.findAll();
     }
 
-    @Override
-    public List<TaskResponse> findTasksByCategory(String category) {
-        List<Task> tasks = repository.findAllByCategory(category);
-        if(tasks.isEmpty()){
-            throw new NotFoundException("Found nothing", HttpStatus.NOT_FOUND);
-        }
-        else {
-            return taskMapper.toDtos(tasks);
-        }
-    }
-
-    @Override
-    public List<TaskResponse> findTasksByName(String name) {
-        List<Task> tasks = new ArrayList<>();
-        for(Task task : repository.findAll()) {
-            if(task.getName().startsWith(name)) {
-                tasks.add(task);
-            }
-        }
-        if(tasks.isEmpty()) {
-            throw new NotFoundException("Found nothing", HttpStatus.NOT_FOUND);
-        } else {
-            return taskMapper.toDtos(tasks);
-        }
-
-    }
-
-    @Override
-    public List<TaskResponse> findTasksByCategoryAndName(String category, String name) {
-        List<Task> tasks = new ArrayList<>();
-        for(Task task : repository.findAll()) {
-            if(task.getName().startsWith(name) && task.getCategory().equals(category)) {
-                tasks.add(task);
-            }
-        }
-        if(tasks.isEmpty()) {
-            throw new NotFoundException("Found nothing", HttpStatus.NOT_FOUND);
-        } else {
-            return taskMapper.toDtos(tasks);
-        }
-    }
+//    @Override
+//    public List<TaskResponse> findTasksByCategory(String category) {
+//        List<Task> tasks = repository.findAllByCategory(category);
+//        if(tasks.isEmpty()){
+//            throw new NotFoundException("Found nothing", HttpStatus.NOT_FOUND);
+//        }
+//        else {
+//            return taskMapper.toDtos(tasks);
+//        }
+//    }
+//
+//    @Override
+//    public List<TaskResponse> findTasksByName(String name) {
+//        List<Task> tasks = new ArrayList<>();
+//        for(Task task : repository.findAll()) {
+//            if(task.getName().startsWith(name)) {
+//                tasks.add(task);
+//            }
+//        }
+//        if(tasks.isEmpty()) {
+//            throw new NotFoundException("Found nothing", HttpStatus.NOT_FOUND);
+//        } else {
+//            return taskMapper.toDtos(tasks);
+//        }
+//
+//    }
+//
+//    @Override
+//    public List<TaskResponse> findTasksByCategoryAndName(String category, String name) {
+//        List<Task> tasks = new ArrayList<>();
+//        for(Task task : repository.findAll()) {
+//            if(task.getName().startsWith(name) && task.getCategory().equals(category)) {
+//                tasks.add(task);
+//            }
+//        }
+//        if(tasks.isEmpty()) {
+//            throw new NotFoundException("Found nothing", HttpStatus.NOT_FOUND);
+//        } else {
+//            return taskMapper.toDtos(tasks);
+//        }
+//    }
 
 }

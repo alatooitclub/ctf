@@ -36,21 +36,21 @@ public class TaskController {
             return taskService.detail(id);
     }
 
-    @GetMapping("/searchTasks/")
-    public List<TaskResponse>findTasks(
-            @RequestParam(required = false)String category ,
-            @RequestParam(required = false)String name
-    ){
-        if((category == null || category.trim().isEmpty() || category.equals(String.valueOf(repository.findByName(category).isPresent()))) && (name == null || name.trim().isEmpty())) {
-            return taskService.all();
-        }else {
-            if (category != null && name != null) {
-                return taskService.findTasksByCategoryAndName(category, name);
-            } else if (category != null) {
-                return taskService.findTasksByCategory(category);
-            } else {
-                return taskService.findTasksByName(name);
-            }
-        }
-    }
+//    @GetMapping("/searchTasks/")
+//    public List<TaskResponse>findTasks(
+//            @RequestParam(required = false)String category ,
+//            @RequestParam(required = false)String name
+//    ){
+//        if((category == null || category.trim().isEmpty() || category.equals(String.valueOf(repository.findByName(category).isPresent()))) && (name == null || name.trim().isEmpty())) {
+//            return taskService.all();
+//        }else {
+//            if (category != null && name != null) {
+//                return taskService.findTasksByCategoryAndName(category, name);
+//            } else if (category != null) {
+//                return taskService.findTasksByCategory(category);
+//            } else {
+//                return taskService.findTasksByName(name);
+//            }
+//        }
+//    }
 }
