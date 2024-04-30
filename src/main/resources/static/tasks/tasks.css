@@ -1,8 +1,58 @@
-.challenges-section{
-    content: '';
-    position: absolute;
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #222;
+    color: white;
+    padding: 20px;
+}
+
+.filters input[type="checkbox"], .filters input[type="text"] {
+    margin-bottom: 10px;
+}
+
+.filters input[type="text"] {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(#000, #00FDFF,#000);
-    animation: animate 5s linear infinite;
+    padding: 5px;
+}
+
+.category-filter div {
+    margin-top: 10px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.challenge {
+    background-color: #333;
+    padding: 10px;
+    color: white;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    margin: 0 5px;
 }

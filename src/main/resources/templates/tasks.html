@@ -1,26 +1,48 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Challenge page</title>
-<!--    <link rel="stylesheet"  th:href="@{/static/tasks/tasks.css}">-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Platform</title>
 
 </head>
 <body>
-<h1>Hi there</h1>
-<section id="filter-section">
-    <!-- Filter options -->
-</section>
-
-<section id="challenges-section">
-
-
-</section>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<div class="sidebar">
+    <div class="filters">
+        <input type="checkbox" id="hide-solved">
+        <label for="hide-solved">Hide Solved</label>
+        <input type="checkbox" id="show-bookmarked">
+        <label for="show-bookmarked">Show Bookmarked</label>
+        <input type="text" placeholder="Enter challenge name">
+    </div>
+    <div class="category-filter">
+        <div>All Categories</div>
+        <div>All Categories</div>
+        <div>All Categories</div>
+        <div>All Categories</div>
+        <div>All Categories</div>
+    </div>
+</div>
+<div class="main-content">
+    <header>
+        <h1>Challenges</h1>
+        <button>Go for Premium</button>
+        <div class="user">John Doe</div>
+    </header>
+    <div class="challenges-grid">
+        <!-- Repeat this block for each challenge -->
+        <div class="challenge">
+            <div class="challenge-name">Challenge Name</div>
+            <div class="challenge-info">231 solves • 10 points</div>
+            <div class="challenge-type">Cryptography</div>
+        </div>
+        <!-- End block -->
+    </div>
+    <div class="pagination">
+        <button>Prev</button>
+        <!-- Numbered buttons should be added here based on pagination logic -->
+        <button>Next</button>
+    </div>
+</div>
 </body>
-<footer>
-    <!-- Footer content -->
-</footer>
-
 </html>
