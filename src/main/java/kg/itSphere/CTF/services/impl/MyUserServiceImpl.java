@@ -1,7 +1,7 @@
 package kg.itSphere.CTF.services.impl;
-
 import kg.itSphere.CTF.dto.user.UserRequest;
 import kg.itSphere.CTF.dto.user.UserResponse;
+import kg.itSphere.CTF.entities.Image;
 import kg.itSphere.CTF.entities.User;
 import kg.itSphere.CTF.exception.CustomException;
 import kg.itSphere.CTF.mapper.UserMapper;
@@ -10,7 +10,6 @@ import kg.itSphere.CTF.services.MyUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -18,7 +17,6 @@ import java.util.List;
 public class MyUserServiceImpl implements MyUserService {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
-
     @Override
     public List<UserResponse> all() {
         return userMapper.toDtoS(userRepository.findAll());
@@ -30,8 +28,9 @@ public class MyUserServiceImpl implements MyUserService {
     }
 
     @Override
-    public void updateById(Long id, UserRequest userRequest) {
+    public void updateById(Long id, UserRequest userRequest, Image image) {
         User user = userRepository.findById(id).orElseThrow(() -> new CustomException("User not found", HttpStatus.NOT_FOUND));
+        user.setImage(image);
         userRepository.save(userMapper.toDtoUser(user, userRequest));
     }
 
