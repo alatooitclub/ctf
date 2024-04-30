@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Login Form</title>
     <link rel="stylesheet" th:href="@{/auth/style.css}">
+    <link rel="stylesheet" th:href="@{/auth/loader.css}">
 
 </head>
 <body>
@@ -19,6 +20,24 @@
 </head>
 
 <body>
+<div class="container" style="display: none;">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+</div>
 
 <section><span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
     <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
@@ -61,15 +80,15 @@
             <h2>Welcome Back!</h2>
 
             <div th:if="${EmailError}">
-                <p th:text="${EmailError}"></p>
+                <p class="alert warning" th:text="${EmailError}"></p>
             </div>
 
             <div th:if="${success}">
-                <p th:text="${success}"></p>
+                <p class="alert success" th:text="${success}"></p>
             </div>
 
             <div th:if="${PasswordError}">
-                <p th:text="${PasswordError}"></p>
+                <p class="alert error" th:text="${PasswordError}"></p>
             </div>
 
             <form class="form" th:action="@{/auth/do-login}" th:object="${authRequest}" th:method="POST">
@@ -99,6 +118,8 @@
     </div>
 
 </section>
+
+<script th:src="@{/auth/loader.js}"></script>
 
 </body>
 
