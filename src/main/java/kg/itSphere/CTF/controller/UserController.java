@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import kg.itSphere.CTF.dto.user.UserRequest;
 import kg.itSphere.CTF.dto.user.UserResponse;
+import kg.itSphere.CTF.entities.Image;
 import kg.itSphere.CTF.services.MyUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -28,8 +29,10 @@ public class UserController {
     }
 
     @PutMapping("/updateById")
-    public void updateById(@NotNull @RequestParam(value = "id") Long id, @Valid @RequestBody UserRequest userRequest) {
-        userService.updateById(id, userRequest);
+    public void updateById(@NotNull @RequestParam(value = "id") Long id,
+                           @RequestParam(value = "image") Image image,
+                           @Valid @RequestBody UserRequest userRequest) {
+        userService.updateById(id, userRequest, image);
     }
 
     @DeleteMapping("/deleteById")

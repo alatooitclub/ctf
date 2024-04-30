@@ -25,6 +25,8 @@ public class User implements UserDetails{
     private String password;
     @OneToMany
     private List<Task> tasks;
+    @OneToOne
+    private Image image;
 
     @ManyToOne
     @JoinColumn(referencedColumnName = "name")
