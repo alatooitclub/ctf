@@ -228,6 +228,19 @@ section .signin .content .form
   opacity: 0;
 }
 
+.alert {
+  padding: 2%;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+}
+
+.alert.success { color: #28a745; }
+.alert.info { color: #17a2b8; }
+.alert.warning { color: #ffc107;}
+.alert.error { color: #dc3545; }
+
 
 @media (max-width: 900px)
 {

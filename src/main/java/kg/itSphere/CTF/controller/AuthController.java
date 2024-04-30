@@ -75,7 +75,7 @@ public class AuthController {
             model.addAttribute("serverError", "Cannot register user, server error!");
             return "register";
         }
-        return "redirect:/auth/home";
+        return "redirect:/auth/login-form";
     }
 
     @PostMapping("/do-login")
