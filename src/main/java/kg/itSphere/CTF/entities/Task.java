@@ -27,8 +27,7 @@ public class Task {
     private Integer points;
     @Enumerated(EnumType.STRING)
     private TaskStatus status;
-    @OneToOne
-    @JoinColumn
+    @ManyToOne
     private Category category;
     @OneToMany
     private List<Hint> hintList;

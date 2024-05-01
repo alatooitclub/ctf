@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenge Platform</title>
+    <title>Challenges Page</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            background-color: #121212;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 
 </head>
 <body>
@@ -15,34 +24,32 @@
         <label for="show-bookmarked">Show Bookmarked</label>
         <input type="text" placeholder="Enter challenge name">
     </div>
-    <div class="category-filter">
-        <div>All Categories</div>
-        <div>All Categories</div>
-        <div>All Categories</div>
-        <div>All Categories</div>
-        <div>All Categories</div>
-    </div>
 </div>
 <div class="main-content">
-    <header>
-        <h1>Challenges</h1>
-        <button>Go for Premium</button>
-        <div class="user">John Doe</div>
-    </header>
-    <div class="challenges-grid">
-        <!-- Repeat this block for each challenge -->
-        <div class="challenge">
-            <div class="challenge-name">Challenge Name</div>
-            <div class="challenge-info">231 solves • 10 points</div>
-            <div class="challenge-type">Cryptography</div>
-        </div>
-        <!-- End block -->
-    </div>
-    <div class="pagination">
-        <button>Prev</button>
-        <!-- Numbered buttons should be added here based on pagination logic -->
-        <button>Next</button>
-    </div>
+    <table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>solves</th>
+        <th>difficulty</th>
+        <th>category</th>
+        <th>points</th>
+        <th>solves</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="task : ${tasks}">
+        <td th:text="${task.name}"></td>
+        <td th:text="${task.description}"></td>
+        <td th:text="${task.solves}"></td>
+        <td th:text="${task.difficulty}"></td>
+        <td th:text="${task.category.name}"></td>
+        <td th:text="${task.points}"></td>
+        <td th:text="${task.solves}"></td>
+
+    </tbody>
+    </table>
 </div>
 </body>
 </html>
