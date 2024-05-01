@@ -1,14 +1,18 @@
 package kg.itSphere.CTF.services.impl;
 
+import kg.itSphere.CTF.dto.event.EventRequest;
 import kg.itSphere.CTF.dto.task.CategoryRequest;
 import kg.itSphere.CTF.dto.task.TaskRequest;
 import kg.itSphere.CTF.entities.Category;
+import kg.itSphere.CTF.entities.Event;
 import kg.itSphere.CTF.exception.BadCredentialsException;
 import kg.itSphere.CTF.exception.BadRequestException;
 import kg.itSphere.CTF.exception.NotFoundException;
 import kg.itSphere.CTF.entities.Task;
+import kg.itSphere.CTF.mapper.EventMapper;
 import kg.itSphere.CTF.mapper.TaskMapper;
 import kg.itSphere.CTF.repository.CategoryRepository;
+import kg.itSphere.CTF.repository.EventRepository;
 import kg.itSphere.CTF.repository.ImageRepository;
 import kg.itSphere.CTF.repository.TaskRepository;
 import kg.itSphere.CTF.services.AdminService;
@@ -23,6 +27,8 @@ public class AdminServiceImpl implements AdminService {
     private final CategoryRepository categoryRepository    ;
     private final TaskRepository taskRepository;
     private final TaskMapper taskMapper;
+    private final EventRepository eventRepository;
+    private final EventMapper eventMapper;
     @Override
     public void addTask(TaskRequest taskRequest) {
 
@@ -60,6 +66,12 @@ public class AdminServiceImpl implements AdminService {
         Category category1 = new Category();
         category1.setName(categoryRequest.getCategoryName());
         categoryRepository.save(category1);
+    }
+
+    @Override
+    public void addEvent(EventRequest eventRequest) {
+        Event event = new Event();
+        eventRepository.save(eventMapper.toDtoEvent(event, eventRequest));
     }
 
 }
