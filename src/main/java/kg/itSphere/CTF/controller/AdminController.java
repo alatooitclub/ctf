@@ -1,6 +1,7 @@
 package kg.itSphere.CTF.controller;
 
 import kg.itSphere.CTF.dto.MyData;
+import kg.itSphere.CTF.dto.event.EventRequest;
 import kg.itSphere.CTF.dto.task.CategoryRequest;
 import kg.itSphere.CTF.dto.task.TaskRequest;
 import kg.itSphere.CTF.services.AdminService;
@@ -43,6 +44,14 @@ public class AdminController {
         MyData data = new MyData();
         data.setMessage("Category added successfully");
         return data ;
+    }
+
+    @PostMapping("/event/add")
+    public MyData addEvent(@RequestBody EventRequest eventRequest){
+        adminService.addEvent(eventRequest);
+        MyData data = new MyData();
+        data.setMessage("Event added successfully");
+        return data;
     }
 
 }
