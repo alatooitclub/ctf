@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Challenges Page</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            background-color: #121212;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 
 </head>
 <body>
@@ -35,7 +44,7 @@
         <td th:text="${task.description}"></td>
         <td th:text="${task.solves}"></td>
         <td th:text="${task.difficulty}"></td>
-        <td th:text="${task.category}"></td>
+        <td th:text="${task.category.name}"></td>
         <td th:text="${task.points}"></td>
         <td th:text="${task.solves}"></td>
 
