@@ -5,13 +5,16 @@ import kg.itSphere.CTF.dto.task.TaskResponse;
 import kg.itSphere.CTF.entities.Category;
 import kg.itSphere.CTF.entities.Image;
 import kg.itSphere.CTF.entities.Task;
+import kg.itSphere.CTF.enums.TaskDifficulty;
 import kg.itSphere.CTF.enums.TaskStatus;
+import kg.itSphere.CTF.exception.BadRequestException;
 import kg.itSphere.CTF.exception.NotFoundException;
 import kg.itSphere.CTF.mapper.TaskMapper;
 import kg.itSphere.CTF.repository.CategoryRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,9 +56,21 @@ public class TaskMapperImpl implements TaskMapper {
         task.setName(taskRequest.getName());
         task.setPoints(taskRequest.getPoints());
         task.setStatus(TaskStatus.ACTIVE);
+        if (isValidDifficulty(taskRequest.getDifficulty())) {
+            TaskDifficulty difficulty = TaskDifficulty.valueOf(taskRequest.getDifficulty().toUpperCase());
+            task.setDifficulty(difficulty);
+        } else {
+
+            throw new BadRequestException("Invalid difficulty level: " + taskRequest.getDifficulty());
+        }
         return task;
-
-
-
+    }
+    public boolean isValidDifficulty(String difficulty) {
+        for (TaskDifficulty d : TaskDifficulty.values()) {
+            if (d.name().equalsIgnoreCase(difficulty)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
