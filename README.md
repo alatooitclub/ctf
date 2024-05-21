@@ -13,7 +13,7 @@ Welcome to the official repository for the AlaTooITClub's Capture The Flag (CTF)
 ## Prerequisites
 
 Before you begin, ensure you have the following installed on your system:
-- Java JDK 11 or newer
+- Java JDK 17 or newer
 - Maven 3.6 or higher
 ## Installation
 
