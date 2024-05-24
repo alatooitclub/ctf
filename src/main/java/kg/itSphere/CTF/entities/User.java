@@ -27,6 +27,8 @@ public class User implements UserDetails{
     private List<Task> tasks;
     @OneToOne
     private Image image;
+    @ManyToMany
+    private List<Event> events;
 
     @ManyToOne
     @JoinColumn(referencedColumnName = "name")
