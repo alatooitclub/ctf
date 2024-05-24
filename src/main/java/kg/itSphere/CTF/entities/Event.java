@@ -6,6 +6,7 @@ import lombok.Setter;
 import org.joda.time.DateTime;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -23,4 +24,6 @@ public class Event {
     private String description;
     @OneToOne
     private Image image;
+    @ManyToMany
+    private List<User> users;
 }

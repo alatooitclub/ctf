@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Events Page</title>
+<!--    <link rel="stylesheet" href="/static/event/all">-->
+    <link rel="stylesheet" th:href="@{/event/all.css}">
+</head>
+<body>
+<div class="top-navbar">
+    <div class="nav-buttons">
+        <button class="nav-btn large" th:onclick="'redirectHome();'">Home</button>
+        <button class="nav-btn active" th:onclick="'redirectEvents();'">Events</button>
+        <button class="nav-btn" th:onclick="'redirectChallenges();'">Challenges</button>
+        <button class="nav-btn" th:onclick="'redirectScoreboard();'">Scoreboard</button>
+    </div>
+
+</div>
+<div class="navbar">
+    <div class="nav-links">
+        <button class="nav-lnk">Ongoing</button>
+        <button class="nav-lnk">Upcoming</button>
+        <button class="nav-lnk">Past</button>
+        <button class="nav-lnk">Joined</button>
+    </div>
+    <div class="nav-links">
+        <button class="nav-lnk">Profile</button>
+    </div>
+</div>
+<div class="container">
+    <div th:each="event : ${events}" class="card">
+<!--        <div class="card-header">-->
+<!--            <img th:src="@{${event.headerImage}}" alt="Event Banner" />-->
+<!--        </div>-->
+        <div class="card-body">
+            <h4 th:text="${event.name}">Event Title</h4>
+            <p th:text="${event.startDate}">Event Start</p>
+            <p th:text="${event.endDate}">Event End</p>
+            <p th:text="${event.users.size()}">players joined</p>
+<!--            <div class="players">-->
+<!--                <span class="players-joined" th:text="${event.playersJoined} + ' players joined'"> players joined</span>-->
+<!--            </div>-->
+<!--            <button class="join-btn">-->
+<!--                <a th:href="@{/auth/login-form}" class="login"> Log in</a>-->
+<!--            </button>-->
+<!--            <button class="join-btn">Join event</button>-->
+            <a th:href="@{/auth/login-form}" class="login">
+                <button class="join-btn">Log in</button>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
