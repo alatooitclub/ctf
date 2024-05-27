@@ -1,12 +1,149 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #222;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            color: #0af;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .user img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            margin-bottom: 20px;
+        }
+
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .profile-info h2, .profile-info p {
+            margin: 5px 0;
+        }
+
+        .tabs button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .tabs button:hover {
+            background-color: #555;
+        }
+
+        .progress {
+            width: 80%;
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            header nav, .profile {
+                flex-direction: column;
+            }
+
+            .profile img {
+                margin-bottom: 10px;
+            }
+
+            .tabs button {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
+<header>
+    <div class="logo">QALQAN</div>
+    <nav>
+        <ul>
+            <li><a href="#challenges">Challenges</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#premium">Go for Premium</a></li>
+        </ul>
+        <div class="user">
+            <img th:src="@{/{filename}(filename=${logoFileName})}" alt="Dynamic Logo"/>
+            <span>John Doe</span>
+        </div>
+    </nav>
+</header>
+<div class="profile-container">
+    <div class="profile">
+        <img th:src="@{logoFileName}" alt="Dynamic Logo"/>
+        <div class="profile-info">
+            <h2>NickName: JohnyD</h2>
+            <p>🏆 10</p>
+            <p>🎉 25</p>
+            <button>Edit</button>
+        </div>
+    </div>
+    <div class="tabs">
+        <button>User Details</button>
+        <button>Profile Settings</button>
+        <button>Billing & Plans</button>
+    </div>
+    <div class="progress">
+        <h2>Progress</h2>
+    </div>
+</div>
 </body>
 </html>

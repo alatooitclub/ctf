@@ -23,7 +23,6 @@ public class AuthServiceImpl implements AuthService {
     private final UserRepository userRepository;
     private final AuthMapper authMapper;
     private final AuthenticationManager authenticationManager;
-
     @Override
     public AuthResponse register(AuthRegisterRequest authRegisterRequest) {
         if(roleRepository.findByName("USER").isEmpty()) {
@@ -40,7 +39,6 @@ public class AuthServiceImpl implements AuthService {
             return authMapper.toDto(user);
         }
     }
-
     @Override
     public AuthResponse login(AuthRequest authRequest) {
         authenticationManager.authenticate(
