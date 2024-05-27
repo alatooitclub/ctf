@@ -18,5 +18,4 @@ public class TaskRequest {
     private String difficulty;
     private Integer rating;
     private Integer points;
-    private String status;
 }
