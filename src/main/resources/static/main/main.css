@@ -1,4 +1,3 @@
-
 @import 'https://fonts.googleapis.com/css?family=Audiowide|Iceland|Monoton|Pacifico|Press+Start+2P|Vampiro+One';
 body {
     margin: 0;
@@ -12,7 +11,6 @@ body {
     min-width:100%;
     background-position:right;
 }
-
 .navbar{
     background:#000;
     color:#00FDFF;
@@ -297,3 +295,59 @@ body {
 .join-button button:active{
     opacity: 0.5;
 }
+
+.btn-signup {
+    background-color: black; /* Black background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    border: 2px solid #00bfff; /* Cyan border */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-signup:hover {
+    color: #00bfff; /* Cyan text on hover */
+    background-color: white; /* White background on hover */
+}
+
+
+/* Основной стиль для выпадающего меню */
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем внутренний отступ */
+    margin: 0; /* Убираем внешний отступ */
+}
+
+.navbar .dropdown-content a {
+    color: #00FDFF;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: Iceland;
+    font-size: 1.2rem;
+}
+
+.navbar .dropdown-content a:hover {
+    background-color: #575757;
+}
+
+/* Показывать выпадающее меню при наведении */
+.navbar .nav-item:hover .dropdown-content {
+    display: block;
+}
+
+.navbar .nav-item:hover .nav-link {
+    color: white !important;
+}
+
+
+
