@@ -1,0 +1,353 @@
+@import 'https://fonts.googleapis.com/css?family=Audiowide|Iceland|Monoton|Pacifico|Press+Start+2P|Vampiro+One';
+body {
+    margin: 0;
+    padding: 0;
+    /*background: url("../images/1.png");*/
+    background-size: cover;
+    background-color: #111 !important;
+    background-attachment: fixed;
+    font-family: Iceland;
+    min-height: 100vh;
+    min-width:100%;
+    background-position:right;
+}
+.navbar{
+    background:#000;
+    color:#00FDFF;
+}
+.navbar .nav-item a{
+    color:#00FDFF !important;
+    font-family: Iceland;
+    font-size: 1.5rem;
+}
+.main-body
+{
+    min-height: 100vh;
+    color:#00FDFF;
+    font-family: Iceland;
+    font-size: 3rem;
+}
+#demo{
+    color:white !important;
+    font-size: 2.5rem;
+}
+#about-text{
+    font-size: 3.5vh;
+    line-height: 4vh;
+}
+
+.red{
+    color:#00FDFF !important;
+}
+.navbar .nav-item .main{
+    border-top: 1px solid #00FDFF;
+    border-bottom: 1px solid #00FDFF;
+    color:white !important;
+}
+.navbar .nav-item :hover{
+    color:white !important;
+}
+.flag{
+    color:white;
+}
+.glitch {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /*background: url("../images/1.jpg");*/
+    background-size: cover;
+}
+
+.glitch:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background: url("../images/1.jpg");*/
+    background-size: cover;
+    opacity: 0.5;
+    /*mix-blend-mode: hard-light;*/
+
+}
+.main-body h1{
+    font-size: 4rem;
+    margin: auto;
+}
+.glitch-text-bac{
+    background-color: #000;
+    border: 0.5px solid #00FDFF;
+}
+.glitch:hover:before {
+
+    animation: animate .2s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+        filter: hue-rotate(0deg);
+    }
+    10% {
+        background-position: 4px 0;
+    }
+    20% {
+        background-position: -4px 0;
+    }
+    30% {
+        background-position: 12px 0;
+    }
+    40% {
+        background-position: -16px 0;
+    }
+    50% {
+        background-position: -24px 0;
+    }
+    60% {
+        background-position: -52px 0;
+    }
+    70% {
+        background-position: 0 22px;
+    }
+    80% {
+        background-position: -40px -10px;
+    }
+    100% {
+        background-position: 0 0;
+        filter: hue-rotate(360deg);
+    }
+}
+.glitch-text {
+    position: relative;
+}
+@keyframes noise-anim {
+    0% {
+        clip: rect(61px, 9999px, 71px, 0);
+    }
+    5% {
+        clip: rect(13px, 9999px, 100px, 0);
+    }
+    10% {
+        clip: rect(67px, 9999px, 36px, 0);
+    }
+    15% {
+        clip: rect(74px, 9999px, 91px, 0);
+    }
+    20% {
+        clip: rect(53px, 9999px, 15px, 0);
+    }
+    25% {
+        clip: rect(46px, 9999px, 77px, 0);
+    }
+    30% {
+        clip: rect(27px, 9999px, 5px, 0);
+    }
+    35% {
+        clip: rect(72px, 9999px, 98px, 0);
+    }
+    40% {
+        clip: rect(54px, 9999px, 95px, 0);
+    }
+    45% {
+        clip: rect(29px, 9999px, 30px, 0);
+    }
+    50% {
+        clip: rect(62px, 9999px, 60px, 0);
+    }
+    55% {
+        clip: rect(22px, 9999px, 72px, 0);
+    }
+    60% {
+        clip: rect(94px, 9999px, 60px, 0);
+    }
+    65% {
+        clip: rect(72px, 9999px, 54px, 0);
+    }
+    70% {
+        clip: rect(100px, 9999px, 5px, 0);
+    }
+    75% {
+        clip: rect(61px, 9999px, 26px, 0);
+    }
+    80% {
+        clip: rect(58px, 9999px, 52px, 0);
+    }
+    85% {
+        clip: rect(73px, 9999px, 4px, 0);
+    }
+    90% {
+        clip: rect(26px, 9999px, 40px, 0);
+    }
+    95% {
+        clip: rect(67px, 9999px, 20px, 0);
+    }
+    100% {
+        clip: rect(7px, 9999px, 46px, 0);
+    }
+}
+.glitch-text:after {
+    text-align: center;
+    content: attr(data-text);
+    position: absolute;
+    left: -1px;
+    top: 0;
+    overflow: hidden;
+    text-shadow: 2px solid white;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim 2s infinite linear alternate-reverse;
+}
+@keyframes noise-anim-2 {
+    0% {
+        clip: rect(49px, 9999px, 55px, 0);
+    }
+    5% {
+        clip: rect(7px, 9999px, 8px, 0);
+    }
+    10% {
+        clip: rect(75px, 9999px, 48px, 0);
+    }
+    15% {
+        clip: rect(11px, 9999px, 44px, 0);
+    }
+    20% {
+        clip: rect(51px, 9999px, 50px, 0);
+    }
+    25% {
+        clip: rect(30px, 9999px, 28px, 0);
+    }
+    30% {
+        clip: rect(7px, 9999px, 22px, 0);
+    }
+    35% {
+        clip: rect(86px, 9999px, 38px, 0);
+    }
+    40% {
+        clip: rect(35px, 9999px, 48px, 0);
+    }
+    45% {
+        clip: rect(79px, 9999px, 69px, 0);
+    }
+    50% {
+        clip: rect(51px, 9999px, 10px, 0);
+    }
+    55% {
+        clip: rect(11px, 9999px, 44px, 0);
+    }
+    60% {
+        clip: rect(26px, 9999px, 93px, 0);
+    }
+    65% {
+        clip: rect(10px, 9999px, 36px, 0);
+    }
+    70% {
+        clip: rect(91px, 9999px, 99px, 0);
+    }
+    75% {
+        clip: rect(47px, 9999px, 67px, 0);
+    }
+    80% {
+        clip: rect(77px, 9999px, 61px, 0);
+    }
+    85% {
+        clip: rect(68px, 9999px, 41px, 0);
+    }
+    90% {
+        clip: rect(7px, 9999px, 24px, 0);
+    }
+    95% {
+        clip: rect(52px, 9999px, 23px, 0);
+    }
+    100% {
+        clip: rect(65px, 9999px, 69px, 0);
+    }
+}
+.glitch-text:before {
+    text-align: center;
+    word-wrap: normal;
+    content: attr(data-text);
+    position: absolute;
+    left: -2px;
+    text-shadow: 2px solid white;
+    top: 0;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim-2 3s infinite linear alternate-reverse;
+}
+.join-button button{
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 1s,
+    color 1s;
+    background-color: black; /* Black background */
+    color: white; /* White text */
+    font-size: 24px;
+    padding: 10px 20px;
+    border: 2px solid #00bfff; /* Cyan border */
+
+}
+
+.join-button button:hover{
+    background-color: #00bfff;
+    color: #000;
+}
+
+.join-button button:active{
+    opacity: 0.5;
+}
+
+.btn-signup {
+    background-color: black; /* Black background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    border: 2px solid #00bfff; /* Cyan border */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-signup:hover {
+    color: #00bfff; /* Cyan text on hover */
+    background-color: white; /* White background on hover */
+}
+
+
+/* Основной стиль для выпадающего меню */
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем внутренний отступ */
+    margin: 0; /* Убираем внешний отступ */
+}
+
+.navbar .dropdown-content a {
+    color: #00FDFF;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: Iceland;
+    font-size: 1.2rem;
+}
+
+.navbar .dropdown-content a:hover {
+    background-color: #575757;
+}
+
+/* Показывать выпадающее меню при наведении */
+.navbar .nav-item:hover .dropdown-content {
+    display: block;
+}
+
+.navbar .nav-item:hover .nav-link {
+    color: white !important;
+}
+
+
+
