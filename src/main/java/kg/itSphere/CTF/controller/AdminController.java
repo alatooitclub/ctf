@@ -22,6 +22,7 @@ public class AdminController {
         data.setMessage("Task added successfully");
         return data;
     }
+
     @PutMapping("/task/updateById/{taskId}")
     public MyData updateTask(@RequestBody TaskRequest taskRequest
                              ,
