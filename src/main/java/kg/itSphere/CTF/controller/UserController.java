@@ -8,6 +8,7 @@ import kg.itSphere.CTF.entities.Image;
 import kg.itSphere.CTF.services.MyUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,5 +39,12 @@ public class UserController {
     @DeleteMapping("/deleteById")
     public void deleteById(@NotNull @RequestParam(value = "id") Long id) {
         userService.deleteById(id);
+    }
+
+
+    @GetMapping
+    public String showProfile(Model model){
+        model.addAttribute("logoFileName", "src/main/resources/static/profile/alatoo-logo.png");
+        return "profile";
     }
 }

@@ -1,6 +1,5 @@
 package kg.itSphere.CTF.controller;
 
-import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.validation.Valid;
 import kg.itSphere.CTF.dto.auth.AuthRegisterRequest;
 import kg.itSphere.CTF.dto.auth.AuthRequest;
