@@ -1,0 +1,3 @@
+[submodule "CTF"]
+	path = CTF
+	url = https://github.com/alatooitclub/ctf

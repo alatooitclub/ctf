@@ -10,7 +10,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class EventServiceImpl implements EventService {
+public class    EventServiceImpl implements EventService {
     private final EventRepository eventRepository;
 
     @Override
