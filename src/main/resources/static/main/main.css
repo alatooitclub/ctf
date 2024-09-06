@@ -310,8 +310,8 @@ body {
 }
 
 .btn-signup:hover {
-    color: #00bfff; /* Cyan text on hover */
-    background-color: white; /* White background on hover */
+    background-color: #00bfff;
+    color: #000;
 }
 
 
@@ -327,6 +327,7 @@ body {
     padding: 0; /* Убираем внутренний отступ */
     margin: 0; /* Убираем внешний отступ */
 }
+
 
 .navbar .dropdown-content a {
     color: #00FDFF;

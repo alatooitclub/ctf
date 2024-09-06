@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
+
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -22,11 +23,7 @@
         <ul class="navbar-nav mx-auto">
             <li class="nav-item p-3">
                 <a class="nav-link p-0" href="#about_us">About us</a>
-                <ul class="dropdown-content">
-                    <li class="download-content-item"><a href="#">Link 1</a></li>
-                    <li class="download-content-item"><a href="#">Link 2</a></li>
-                    <li class="download-content-item"><a href="#">Link 3</a></li>
-                </ul>
+
             </li>
             <li class="nav-item p-3 ">
                 <a class="nav-link p-0"  href="#about_ctf">About CTF</a>
@@ -35,13 +32,18 @@
                 <a class="nav-link main p-0"><i class="fab fa-linux p-1"></i>ALA-TOO CTF</a>
             </li>
             <li class="nav-item p-3">
-                <a class="nav-link p-0" href="#about_us">About us</a>
+                <a class="nav-link p-0" href="#about_us">Events</a>
+                <ul class="dropdown-content">
+                    <li class="download-content-item"><a th:href="@{/events}">Ongoing</a></li>
+                    <li class="download-content-item"><a th:href="@{/events}">Upcoming</a></li>
+                    <li class="download-content-item"><a th:href="@{/events}">Joined</a></li>
+                </ul>
             </li>
             <li class="nav-item p-3">
-                <a class="nav-link p-0" href="#about_us">About us</a>
+                <a class="nav-link p-0" href="#about_us">Tasks</a>
             </li>
         </ul>
-        <a href="#" class="btn btn-signup">Sign Up</a>
+        <a th:href="@{/auth/register-form}" class="btn btn-signup">Sign Up</a>
     </div>
 </nav>
 
@@ -57,7 +59,7 @@
             <p id="demo" class="w-100 text-center"></p>
 
             <div class="join-button">
-                <button>Join Now</button>
+                <button onclick="window.location.href='/auth/register-form';">Join Now</button>
             </div>
             <br>
             <br>
@@ -69,8 +71,8 @@
             <div class="d-flex justify-content-center glitch-text-bac flex-wrap w-100 p-2">
                 <h1 class="text-white text-center w-100 mt-0 pt-0"><span>About Us</span></h1>
                 <br>
-                <p id="about-text" class="text-center">The GNU/Linux User’s Group, NIT Durgapur is a community of GNU/Linux Users that promote the use of Free and Open Source Software. The Group was established in 2003 by a bunch of FOSS enthusiasts with the idea of popularising and contributing to Open Source. We are a plethora of designers, contributors and developers that believe in learning and sharing through opening up your mind to Open Source.</p>
-                <p id="about-text" class="text-center">We provide budding enthusiasts like ourselves a forum to contribute and learn about FOSS. Through varied workshops on revolutionary Open Technologies throughout the year, we spread the idea of Open Source to beginners and veterans alike. We bring people together to ideate and contribute to the leading Open technologies. We provide help and resources to everyone who wants to make the web world a better place</p>
+                <p id="about-text" class="text-center">IT CLUB CTF represents dynamic community of tech enthusiasts dedicated to exploring and advancing cybersecurity skills. We organize Capture the Flag (CTF) challenges that provide hands-on experience in solving real-world security problems. Through collaboration, innovation, and knowledge sharing, we aim to empower students to excel in the world of cybersecurity and beyond</p>
+                <img src="../static/profile/alatoo-logo.png" alt="alatoo-logo" width="100px" height="100px">
             </div>
         </div>
     </div>
@@ -79,12 +81,10 @@
         <div class="main-body container d-flex align-items-center p-2 mt-3">
             <div class="d-flex justify-content-center glitch-text-bac flex-wrap w-100 p-2">
                 <h1 class="text-white text-center w-100 mt-0 pt-0"><span>About CTF</span></h1>
-                <br>
-                <p id="about-text" class="text-center">Capture The Flags, or CTFs, are a kind of computer security competition.
-
-                    <br>Teams of competitors (or just individuals) are pitted against each other in a test of computer security skill.
-
-                    <br>Very often CTFs are the beginning of one's cyber security career due to their team building nature and competetive aspect. In addition, there isn't a lot of commitment required beyond a weekend.
+                <p id="about-ctf_text" class="text-center">
+                  Capture the Flag (CTF) is a special kind of information security competitions
+                    Teams of competitors (or just individuals) are pitted against each other in a test of computer security skill.
+                   Very often CTFs are the beginning of one's cybersecurity career due to their team building nature and competetive aspect. In addition, there isn't a lot of commitment required beyond a weekend.
                 </p>
                 <div class="row w-100 m-4">
                     <div class="col d-flex justify-content-center">
@@ -97,8 +97,6 @@
                         <i class="fas fa-bug"></i>
                     </div>
                 </div>
-
-                <a href="https://ctf101.org/" class="text-white"><h6 class="text-center ">Click here to Read more.</h6></a><br>
             </div>
         </div>
     </div>

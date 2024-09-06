@@ -1,55 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenges Page</title>
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            color: #ffffff;
-            background-color: #121212;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-
+    <title>Events Page</title>
+    <link rel="stylesheet" th:href="@{/event/all.css}">
+    <link rel="stylesheet" th:href="@{main/main.css}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
-<div class="sidebar">
-    <div class="filters">
-        <input type="checkbox" id="hide-solved">
-        <label for="hide-solved">Hide Solved</label>
-        <input type="checkbox" id="show-bookmarked">
-        <label for="show-bookmarked">Show Bookmarked</label>
-        <input type="text" placeholder="Enter challenge name">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item p-3">
+                <a class="nav-link p-0" href="#about_us">About us</a>
+
+            </li>
+            <li class="nav-item p-3 ">
+                <a class="nav-link p-0"  href="#about_ctf">About CTF</a>
+            </li>
+            <li class="nav-item p-3">
+                <a class="nav-link main p-0"><i class="fab fa-linux p-1"></i>ALA-TOO CTF</a>
+            </li>
+            <li class="nav-item p-3">
+                <a class="nav-link p-0" href="#about_us">Events</a>
+                <ul class="dropdown-content">
+                    <li class="download-content-item"><a th:href="@{/events}">Ongoing</a></li>
+                    <li class="download-content-item"><a th:href="@{/events}">Upcoming</a></li>
+                    <li class="download-content-item"><a th:href="@{/events}">Joined</a></li>
+                </ul>
+            </li>
+            <li class="nav-item p-3">
+                <a class="nav-link p-0" href="#about_us">Tasks</a>
+            </li>
+        </ul>
+        <a th:href="@{/auth/register-form}" class="btn btn-signup">Sign Up</a>
+    </div>
+</nav>
+<!--<div data-spy="scroll" data-target=".navbar">-->
+<!--<div class="top-navbar">-->
+<!--    <div class="nav-buttons">-->
+<!--        <button class="nav-btn large" th:onclick="'redirectHome();'">Home</button>-->
+<!--        <button class="nav-btn active" th:onclick="'redirectEvents();'">Events</button>-->
+<!--        <button class="nav-btn" th:onclick="'redirectChallenges();'">Challenges</button>-->
+<!--        <button class="nav-btn" th:onclick="'redirectScoreboard();'">Scoreboard</button>-->
+<!--    </div>-->
+<!--    <div class="nav-links">-->
+<!--        <button class="nav-lnk">Profile</button>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</div>-->
+<div class="navbar">
+    <div class="nav-links">
+        <button class="nav-lnk">Easy</button>
+        <button class="nav-lnk">Medium</button>
+        <button class="nav-lnk">Hard</button>
+        <button class="nav-lnk">Fo u</button>
     </div>
 </div>
-<div class="main-content">
-    <table class="table">
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>solves</th>
-        <th>difficulty</th>
-        <th>category</th>
-        <th>points</th>
-        <th>solves</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="task : ${tasks}">
-        <td th:text="${task.name}"></td>
-        <td th:text="${task.description}"></td>
-        <td th:text="${task.solves}"></td>
-        <td th:text="${task.difficulty}"></td>
-        <td th:text="${task.category.name}"></td>
-        <td th:text="${task.points}"></td>
-        <td th:text="${task.solves}"></td>
+<div class="main-container">
+    <div class="container">
+        <div th:each="task : ${tasks}" class="card">
+            <div class="card-body">
+                <h4 th:text="${task.name}">Task Name</h4>
+                <p th:text="${task.difficulty}">Task Difficulty</p>
+                <p th:text="${task.points}">Task Point</p>
+                <p th:text="${task.solves}">Task solves</p>
+                <a th:href="@{/tasks/{id}(id=${task.id})}" class="join-btn">Join</a>
+            </div>
+        </div>
+    </div>
 
-    </tbody>
-    </table>
 </div>
+
 </body>
 </html>
